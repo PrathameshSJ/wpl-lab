@@ -3,23 +3,20 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Hospital Map</title>
+    <title>Campus Map</title>
     <link rel="stylesheet" href="map.css">
 </head>
 
 <body id="page-map">
-    <h1>Interactive Hospital Layout</h1>
-    <p style="text-align:center;">Click on the areas in the image (Left:Emergency, Right: Pharmacy).</p>
+    <h1>Interactive Campus Layout</h1>
+    <p style="text-align:center;">Click on the areas in the image (Left: CE Dept, Right: IT Dept).</p>
     <div class="map-wrapper">
-        <img src="https://i.pinimg.com/736x/83/c9/22/83c922df6ceefd6e98bc5775ee57edff.jpg
-" alt="Hospital Layout" usemap="#hospitalmap">
-        <p style="font-style: italic; color: #666; margin-top: 10px;">Fig.1:
-            Ground Floor Plan</p>
+        <img src="campus.jpg" alt="Campus Layout" usemap="#campusmap">
+        <p style="font-style: italic; color: #666; margin-top: 10px;">Fig.1: Campus Plan</p>
     </div>
-    <map name="hospitalmap">
-        <area shape="rect" coords="0,0,300,400" href="services.html" alt="Emergency Ward"
-            title="Go to Emergency Services">
-        <area shape="rect" coords="300,0,600,400" href="doctors.html" alt="Pharmacy" title="Go to Pharmacy Info">
+    <map name="campusmap">
+        <area shape="rect" coords="0,0,300,400" href="../3/about-dept.html" alt="CE Dept" title="Go to CE Dept">
+        <area shape="rect" coords="300,0,600,400" href="../4/clubs.html" alt="IT Dept" title="Go to IT Dept">
     </map>
 </body>
 

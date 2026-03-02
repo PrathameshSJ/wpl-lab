@@ -3,39 +3,40 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Book Appointment</title>
+    <title>Hackathon Registration</title>
     <link rel="stylesheet" href="form.css">
 </head>
 
 <body>
-    <h1>Book an Appointment</h1>
-    <form action="submit appointment.php" method="post">
-        <label for="pname">Patient Name: </label><br>
+    <h1>Register for Hackathon</h1>
+    <form action="submit_registration.php" method="post">
+        <label for="pname">Student Name: </label><br>
         <input type="text" id="pname" name="pname" required><br><br>
-        <label for="email">Email:</label><br>
+        <label for="email">Student Email:</label><br>
         <input type="email" id="email" name="email" required><br><br>
         <label for="phone">Contact Number: </label><br>
         <input type="tel" id="phone" name="phone"><br><br>
-        <label for="dept">Department: </label><br>
+        <label for="dept">Branch: </label><br>
         <select id="dept" name="dept">
-            <option value="cardio">Cardiology</option>
-            <option value="neuro">Neurology</option>
-            <option value="ortho">Orthopedics</option>
+            <option value="cs">Computer Engineering</option>
+            <option value="it">Information Technology</option>
+            <option value="mech">Mechanical Engineering</option>
         </select><br><br>
         <label>Gender: </label><br>
         <input type="radio" id="male" name="gender" value="male">
         <label for="male">Male</label>
         <input type="radio" id="female" name="gender" value="female">
         <label for="female">Female</label><br><br>
-        <label>Symptoms:</label><br>
-        <input type="checkbox" id="fever" name="symptom" value="fever">
-        <label for="fever">Fever</label>
-        <input type="checkbox" id="cough" name="symptom" value="cough">
-        <label for="cough">Cough</label><br><br>
-        <label for="fever">Fever</label>
-        <input type="checkbox" id="cough" name="symptom" value="cough">
-        <label for="cough">Cough</label><br><br>
-        <input type="submit" value="Book Now">
+        <label>Tech Stack:</label><br>
+        <input type="checkbox" id="frontend" name="stack" value="frontend">
+        <label for="frontend">Frontend Web</label>
+        <input type="checkbox" id="backend" name="stack" value="backend">
+        <label for="backend">Backend API</label><br><br>
+        <input type="checkbox" id="ai" name="stack" value="ai">
+        <label for="ai">AI / ML</label>
+        <input type="checkbox" id="app" name="stack" value="app">
+        <label for="app">Mobile App</label><br><br>
+        <input type="submit" value="Register Now">
         <input type="reset" value="Clear Form">
     </form>
 </body>
