@@ -31,6 +31,41 @@
         <li>Email: <a href="mailto:contact@enggcollege.edu">contact@enggcollege.edu</a></li>
         <li>Helpdesk: <a href="tel:+911234567890">+91 12345 67890</a></li>
     </ul>
+
+    <div id="interactionMsg" style="margin-top:20px; font-weight: bold; color: #ff5722;"></div>
+
+    <script>
+        // Task 7: Event Handling – User Interaction
+        document.addEventListener("DOMContentLoaded", () => {
+            const navLinks = document.querySelectorAll("nav a");
+            const msgBox = document.getElementById("interactionMsg");
+
+            navLinks.forEach(link => {
+                // Highlight menu item on hover
+                link.addEventListener("mouseover", (e) => {
+                    e.target.style.backgroundColor = "#ffeb3b";
+                    e.target.style.color = "#000";
+                    e.target.style.padding = "5px";
+                    e.target.style.borderRadius = "3px";
+                    e.target.style.transition = "0.3s";
+                });
+
+                link.addEventListener("mouseout", (e) => {
+                    e.target.style.backgroundColor = "";
+                    e.target.style.color = "";
+                    e.target.style.padding = "";
+                });
+
+                // Display clicked page name
+                link.addEventListener("click", (e) => {
+                    // Prevent default to show the message briefly if needed, 
+                    // though for a real nav we would just show alert or let it navigate
+                    // e.preventDefault(); 
+                    msgBox.innerText = "You are navigating to: " + e.target.innerText;
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

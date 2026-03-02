@@ -1,37 +1,95 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Event Details</title>
-<link rel="stylesheet" href="event.css">
+    <title>Event Details</title>
+    <link rel="stylesheet" href="event.css">
 </head>
+
 <body>
 
-<table style="width:100%">
-<tr>
-<td>
-<img src="KJSCE.webp" alt="logo" style="text-align:left;">
-</td>
+    <table style="width:100%">
+        <tr>
+            <td>
+                <img src="KJSCE.webp" alt="logo" style="text-align:left;">
+            </td>
 
-<td style="width:100%">
-<div id="home" class="container" style="text-align:center;">
-<h1><strong><mark>Abhiyantriki</mark></strong></h1>
+            <td style="width:100%">
+                <div id="home" class="container" style="text-align:center;">
+                    <h1><strong><mark>Abhiyantriki</mark></strong></h1>
 
-<p><strong><mark>Abhiyantriki</mark></strong> is the biggest technical event of our college.</p>
+                    <p><strong><mark>Abhiyantriki</mark></strong> is the biggest technical event of our college.</p>
 
-<p>The main theme of the event is <em>Innovation and Future Technology</em>.</p>
+                    <p>The main theme of the event is <em>Innovation and Future Technology</em>.</p>
 
-<p>The event will be held on 15<sup>th</sup> August 2026.</p>
+                    <p>The event will be held on 15<sup>th</sup> August 2026.</p>
 
-<p>This is version 2<sub>0</sub> of the TechFest.</p>
+                    <p>This is version 2<sub>0</sub> of the TechFest.</p>
 
-<p>Workshops will be conducted on <abbr title="Artificial Intelligence">AI</abbr>, <abbr title="Internet of Things">IoT</abbr>, and <abbr title="Machine Learning">ML</abbr>.</p>
+                    <p>Workshops will be conducted on <abbr title="Artificial Intelligence">AI</abbr>, <abbr
+                            title="Internet of Things">IoT</abbr>, and <abbr title="Machine Learning">ML</abbr>.</p>
 
-<p><small>Event schedule may change without prior notice.</small></p>
-</td>
-</tr>
-</table>
+                    <p><small>Event schedule may change without prior notice.</small></p>
 
-<img src="campus.jpg" alt="Campus Photo" style="width:100%;">
-</div>
+                    <div id="category-selector"
+                        style="margin-top: 20px; text-align: left; background: #f9f9f9; padding: 10px; border-radius: 5px;">
+                        <label for="eventCategory">Select Event Category:</label>
+                        <select id="eventCategory" onchange="showCategoryMessage()">
+                            <option value="">--Select One--</option>
+                            <option value="Technical">Technical</option>
+                            <option value="Cultural">Cultural</option>
+                            <option value="Sports">Sports</option>
+                        </select>
+                        <p id="catMessage" style="font-weight: bold; color: blue; margin-top: 10px;"></p>
+                        <hr>
+                        <h3>Seat Availability</h3>
+                        <p id="seatInfo"></p>
+                    </div>
+
+            </td>
+        </tr>
+    </table>
+
+    <img src="campus.jpg" alt="Campus Photo" style="width:100%;">
+    </div>
+
+    <script>
+        // Task 2: Variables, Data Types & Operators
+        const totalSeats = 250;
+        let registeredStudents = 145;
+        let remainingSeats = totalSeats - registeredStudents;
+
+        let isFull = remainingSeats <= 0;
+
+        let seatText = `Total Seats: ${totalSeats} <br> Registrations: ${registeredStudents} <br> Remaining Seats: ${remainingSeats}`;
+        if (isFull) {
+            seatText += `<br> <span style='color:red;'>Registrations Closed!</span>`;
+        }
+        document.getElementById("seatInfo").innerHTML = seatText;
+
+        // Task 3: Control Flow – Event Category Selection
+        function showCategoryMessage() {
+            let cat = document.getElementById("eventCategory").value;
+            let msgField = document.getElementById("catMessage");
+
+            switch (cat) {
+                case "Technical":
+                    msgField.innerText = "Get ready for Hackathons and Tech Talks!";
+                    msgField.style.color = "blue";
+                    break;
+                case "Cultural":
+                    msgField.innerText = "Enjoy the Dance, Music, and Drama events!";
+                    msgField.style.color = "purple";
+                    break;
+                case "Sports":
+                    msgField.innerText = "Show your athleticism on the field!";
+                    msgField.style.color = "green";
+                    break;
+                default:
+                    msgField.innerText = "";
+            }
+        }
+    </script>
 </body>
+
 </html>

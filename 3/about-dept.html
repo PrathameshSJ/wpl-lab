@@ -9,24 +9,49 @@
 
 <body>
     <h1>Department of Computer Engineering</h1>
-    <section>
+
+    <div style="margin-bottom: 20px;">
+        <button onclick="toggleSection('hod-message', this)">Hide HOD Message</button>
+        <button onclick="toggleSection('vision-mission', this)">Hide Vision & Mission</button>
+    </div>
+
+    <section id="hod-message">
         <h3>Message from the HOD</h3>
         <blockquote>
             "Technology is the engine of innovation, and we are here to build the future."
         </blockquote>
     </section>
-    <div>
-        <h3>Vision</h3>
-        <p>To be a <b>global leader</b> in computer science education and research.</p>
+
+    <div id="vision-mission">
+        <div>
+            <h3>Vision</h3>
+            <p>To be a <b>global leader</b> in computer science education and research.</p>
+        </div>
+        <div>
+            <h3>Mission</h3>
+            <p>To provide <i>high-quality</i> and <b>industry-oriented</b> technical education.</p>
+        </div>
     </div>
-    <div>
-        <h3>Mission</h3>
-        <p>To provide <i>high-quality</i> and <b>industry-oriented</b> technical education.</p>
-    </div>
+
     <div>
         <h3>Facilities</h3>
         <p>High-Performance Computing Lab, AI & Robotics Center, 24/7 Innovation Hub.</p>
     </div>
+
+    <script>
+        // Task 6: DOM Manipulation – Show/Hide Content
+        function toggleSection(sectionId, btn) {
+            let section = document.getElementById(sectionId);
+
+            if (section.style.display === "none") {
+                section.style.display = "block";
+                btn.innerText = "Hide " + (sectionId === 'hod-message' ? "HOD Message" : "Vision & Mission");
+            } else {
+                section.style.display = "none";
+                btn.innerText = "Show " + (sectionId === 'hod-message' ? "HOD Message" : "Vision & Mission");
+            }
+        }
+    </script>
 </body>
 
 </html>

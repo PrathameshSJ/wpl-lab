@@ -26,12 +26,11 @@
         </li>
         <li>Mechanical Engineering</li>
     </ol>
-    <h3>Student Clubs</h3>
-    <ul type="square">
-        <li>Robotics Club</li>
-        <li>Coding Cell</li>
-        <li>AI Enthusiasts</li>
+    <h3>Student Clubs and Events</h3>
+    <ul type="square" id="clubList">
     </ul>
+    <p id="eventCount" style="font-weight: bold; margin-top: 10px;"></p>
+
     <h3>Department Abbreviations</h3>
     <dl>
         <dt>CE</dt>
@@ -39,6 +38,39 @@
         <dt>IT</dt>
         <dd>Information Technology Department.</dd>
     </dl>
+
+    <script>
+        // Task 4: Arrays - Event List Management
+        let events = ["RoboWars (Featured)", "CodeFest (Featured)", "AI Seminar", "Bridge Building", "Debate"];
+
+        // Task 5: Functions - Reusable Logic
+        function displayEvents() {
+            let ul = document.getElementById("clubList");
+            ul.innerHTML = ""; // Clear existing
+
+            events.forEach(event => {
+                let li = document.createElement("li");
+                li.innerText = event;
+
+                // Highlight featured events using if condition
+                if (event.includes("Featured")) {
+                    li.style.fontWeight = "bold";
+                    li.style.color = "#d32f2f";
+                }
+
+                ul.appendChild(li);
+            });
+        }
+
+        const countEvents = () => {
+            let countLabel = document.getElementById("eventCount");
+            countLabel.innerText = "Total Registered Events: " + events.length;
+        };
+
+        // Call functions to run logic
+        displayEvents();
+        countEvents();
+    </script>
 </body>
 
 </html>

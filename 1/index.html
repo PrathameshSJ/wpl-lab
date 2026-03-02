@@ -1,23 +1,40 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>College Event Portal</title>
-<link rel="stylesheet" href="style.css">
+    <title>College Event Portal</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div id="home" class="container" style="text-align:center;">
+    <div id="home" class="container" style="text-align:center;">
 
-<img src="KJSCE.webp" alt="logo">
+        <img src="KJSCE.webp" alt="logo">
 
-        
-<h2 class="logo" title="Official College Event Portal">COLLEGE EVENT PORTAL</h2>
 
-<h1 id="clgname" title="Welcome to KJSSE">K. J. Somaiya School of Engineering</h1>
+        <h2 class="logo" title="Official College Event Portal">COLLEGE EVENT PORTAL</h2>
 
-<p class="year">Academic Year: 2025 – 2026</p>
+        <h1 id="clgname" title="Welcome to KJSSE">K. J. Somaiya School of Engineering</h1>
 
-</div>
+        <h2 class="welcome-msg" id="msg"></h2>
+        <p class="date" id="dateDisplay"></p>
+
+        <p class="year">Academic Year: 2025 – 2026</p>
+
+    </div>
+
+    <script>
+        // Task 1: JavaScript Initialization & DOM Access
+        let studentName = prompt("Please enter your name:", "Student");
+        if (!studentName) studentName = "Student";
+
+        document.getElementById("msg").innerText = "Welcome, " + studentName + "!";
+
+        let today = new Date();
+        document.getElementById("dateDisplay").innerText = "Current Date: " + today.toDateString();
+    </script>
 
 </body>
+
 </html>
