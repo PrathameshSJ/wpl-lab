@@ -9,36 +9,72 @@
 
 <body>
     <h1>Register for Hackathon</h1>
-    <form action="submit_registration.php" method="post">
-        <label for="pname">Student Name: </label><br>
-        <input type="text" id="pname" name="pname" required><br><br>
-        <label for="email">Student Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
-        <label for="phone">Contact Number: </label><br>
-        <input type="tel" id="phone" name="phone"><br><br>
-        <label for="dept">Branch: </label><br>
-        <select id="dept" name="dept">
-            <option value="cs">Computer Engineering</option>
-            <option value="it">Information Technology</option>
-            <option value="mech">Mechanical Engineering</option>
-        </select><br><br>
-        <label>Gender: </label><br>
-        <input type="radio" id="male" name="gender" value="male">
-        <label for="male">Male</label>
-        <input type="radio" id="female" name="gender" value="female">
-        <label for="female">Female</label><br><br>
-        <label>Tech Stack:</label><br>
-        <input type="checkbox" id="frontend" name="stack" value="frontend">
-        <label for="frontend">Frontend Web</label>
-        <input type="checkbox" id="backend" name="stack" value="backend">
-        <label for="backend">Backend API</label><br><br>
-        <input type="checkbox" id="ai" name="stack" value="ai">
-        <label for="ai">AI / ML</label>
-        <input type="checkbox" id="app" name="stack" value="app">
-        <label for="app">Mobile App</label><br><br>
-        <input type="submit" value="Register Now">
-        <input type="reset" value="Clear Form">
+    <form id="registrationForm" action="submit_registration.php" method="post" novalidate>
+        <div class="form-group">
+            <label for="pname">Student Name: </label>
+            <input type="text" id="pname" name="pname" required>
+            <span id="nameError" class="error-msg"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Student Email:</label>
+            <input type="email" id="email" name="email" required>
+            <span id="emailError" class="error-msg"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Contact Number: </label>
+            <input type="tel" id="phone" name="phone">
+            <span id="phoneError" class="error-msg"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password: </label>
+            <input type="password" id="password" name="password" required>
+            <span id="passwordError" class="error-msg"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password: </label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+            <span id="confirmPasswordError" class="error-msg"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="dept">Branch: </label>
+            <select id="dept" name="dept">
+                <option value="cs">Computer Engineering</option>
+                <option value="it">Information Technology</option>
+                <option value="mech">Mechanical Engineering</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Gender: </label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male" class="inline-label">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female" class="inline-label">Female</label>
+        </div>
+
+        <div class="form-group">
+            <label>Tech Stack:</label>
+            <input type="checkbox" id="frontend" name="stack" value="frontend">
+            <label for="frontend" class="inline-label">Frontend Web</label>
+            <input type="checkbox" id="backend" name="stack" value="backend">
+            <label for="backend" class="inline-label">Backend API</label>
+            <input type="checkbox" id="ai" name="stack" value="ai">
+            <label for="ai" class="inline-label">AI / ML</label>
+            <input type="checkbox" id="app" name="stack" value="app">
+            <label for="app" class="inline-label">Mobile App</label>
+        </div>
+
+        <div class="form-actions">
+            <input type="submit" value="Register Now">
+            <input type="reset" value="Clear Form">
+        </div>
     </form>
+    <script src="validation.js"></script>
 </body>
 
 </html>
