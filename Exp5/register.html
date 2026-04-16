@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon Registration</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+    <h1>Register for Hackathon</h1>
+
+    <!-- Method selector -->
+    <div class="method-selector">
+        <label><strong>Choose submission method:</strong></label>
+        <select id="methodSelect" onchange="switchMethod()">
+            <option value="post">POST Method</option>
+            <option value="get">GET Method</option>
+            <option value="request">REQUEST Method</option>
+        </select>
+    </div>
+
+    <form id="registrationForm" action="post_registration.php" method="post" novalidate>
+        <div class="form-group">
+            <label for="pname">Student Name: </label>
+            <input type="text" id="pname" name="pname" required>
+            <span id="nameError" class="error-msg"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Student Email:</label>
+            <input type="email" id="email" name="email" required>
+            <span id="emailError" class="error-msg"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Contact Number: </label>
+            <input type="tel" id="phone" name="phone">
+            <span id="phoneError" class="error-msg"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password: </label>
+            <input type="password" id="password" name="password" required>
+            <span id="passwordError" class="error-msg"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password: </label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+            <span id="confirmPasswordError" class="error-msg"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="dept">Branch: </label>
+            <select id="dept" name="dept">
+                <option value="cs">Computer Engineering</option>
+                <option value="it">Information Technology</option>
+                <option value="mech">Mechanical Engineering</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Gender: </label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male" class="inline-label">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female" class="inline-label">Female</label>
+        </div>
+
+        <div class="form-group">
+            <label>Tech Stack:</label>
+            <input type="checkbox" id="frontend" name="stack[]" value="Frontend Web">
+            <label for="frontend" class="inline-label">Frontend Web</label>
+            <input type="checkbox" id="backend" name="stack[]" value="Backend API">
+            <label for="backend" class="inline-label">Backend API</label>
+            <input type="checkbox" id="ai" name="stack[]" value="AI / ML">
+            <label for="ai" class="inline-label">AI / ML</label>
+            <input type="checkbox" id="app" name="stack[]" value="Mobile App">
+            <label for="app" class="inline-label">Mobile App</label>
+        </div>
+
+        <div class="form-actions">
+            <input type="submit" value="Register Now">
+            <input type="reset" value="Clear Form">
+        </div>
+    </form>
+
+    <script src="validation.js"></script>
+    <script>
+        function switchMethod() {
+            const form = document.getElementById('registrationForm');
+            const method = document.getElementById('methodSelect').value;
+            if (method === 'post') {
+                form.action = 'post_registration.php';
+                form.method = 'post';
+            } else if (method === 'get') {
+                form.action = 'get_registration.php';
+                form.method = 'get';
+            } else {
+                form.action = 'request_registration.php';
+                form.method = 'post'; // REQUEST works with both; use POST here
+            }
+        }
+    </script>
+</body>
+
+</html>
